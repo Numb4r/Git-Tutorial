@@ -1,0 +1,175 @@
+\documentclass[]{article}
+
+
+\usepackage[backend=biber]{biblatex}
+\addbibresource{references.bib}
+\title{Tutorial Git}
+\author{Yuri Dimitre Dias de Faria}
+\date{Fevereiro 2020}
+
+\begin{document}
+
+\maketitle    
+
+\section{O que é Git?}
+
+
+Git é um sistema de controle de versões distribuido desenvolvido por Linus Torvalds.
+
+
+Seu objetivo inicial era o versionamento e a geração de um historico de alterações do desenvolvimento do kernel Linux.
+Rapidamente o Git foi sendo adotado por outros projeto, sendo eles de desenvolvimento de software ou com propostas gerais.
+
+
+Git e distribuido sob a licensa GNU General Public License \textcite{GNULicense}. Atualmente sua manutenção e supervisionada por Junio Hamano.
+
+\section{Como instalar o Git(Linux)}
+
+
+O Git pode vir por padrão em varias distribuições.Para ver se sua distro ja possui ele, basta apenas rodar o comando ``git - -version''.
+
+
+Para instalar, verifique qual gerenciador de pacotes sua distribuição utiliza.
+
+\subsubsection*{DPKG}
+
+\# apt-get install -y git 
+
+\subsubsection*{RPM}
+
+\# dnf install -y git    
+
+\subsubsection*{PACMAN}
+
+\# pacman -Sy git
+
+
+
+\section{Configurações do Git}
+
+
+Agora que o Git está instalado no sistema, podemos personalizar seu ambiente. As suas customizações se manterão mesmo depois do programa ser atualizado. Alem disso, as configurações poderão ser alteradas a qualquer momento, bastando apenas rodar os comandos novamente. 
+
+
+O Git vem com uma ferramenta ja pronta para configuração, bastando apeanas rodar o comando \textit{git config} e atribuir valores as variaveis.
+
+
+Estas variaveis ficam armazenadas em três lugares distintos:
+
+
+\begin{itemize}
+    \item {\textbf{/etc/gitconfig:} } Valido para todos os usuarios do sistema.Para isso, utilize a flag --system do comando git config.
+    
+    \item {\textbf{\textasciitilde/.gitconfig ou \textasciitilde/.config/git/config:} } Valido apenas para o usuario atual. Para isso, utilize a flag --global do comando git config.
+    
+    \item {\textbf{config(.git/config) de  cada repositorio:} } Especifico  do repositorio.
+\end{itemize}
+Você pode ver suas configurações com o comando \textit{git config - -list}.
+
+\subsection*{Sua identidade}
+A primeira coisa a ser feita  após o Git ser instalado e a configuração de identidade. Ela é importante ja que todo commit e carimbado com essas informações, que sao imutaveis.
+
+\textbf{\$ git config --global user.name ``Nome'' }
+
+\textbf{\$ git config --global user.email Nome@domain.br}
+
+Note a flag \textit{- -global}, o que significa que essa configuração será valida para o usuario atualmente logado.
+
+\section{Repositorios}
+
+Repositorios são a maneira do Git  trabalhar. Você pode ter mais de um em sua maquina, mas cada projeto possui o seu exclusivo.
+
+Exitem duas formas de adquirir um repositorio, criando ou clonando.
+
+Esse tutorial irá abranger comandos que irão ser executados em emuladores de terminal ou janelas de comando. 
+Existem programas, como o GitKraken, que é possivel criar e gerenciar repositorios por meio de interfaces graficas. No entanto, é preciso
+um conhecimento previo e bem estabelecido dos comandos Git para sua total usabilidade.
+
+\subsection*{Criando}
+
+Para criar um repositorio, primeiro precisa navegar até a pasta onde está seu projeto. O comando \textit{cd} é usado para mudar o diretorio atual da sua janela de comandos.
+
+cd /users/user/Projects/Tutorial
+
+Assim que estiver na pasta do seu projeto, um repositorio Git pode ser criado pelo comando \textit{git init}. Esse comando irá criar um subdiretorio \textbf{ .git } dentro da pasta do seu projeto.
+
+\subsection*{Clonando}
+
+Para clonar um repositorio existente, navegue ate a pasta que deseja salva-lo e execute \textit{git clone [url]}.
+
+Por exemplo, se quiser clonar o repositorio do youtube-dl no Github,basta apenas executar o comando: 
+
+\textbf{git clone https://github.com/ytdl-org/youtube-dl/}
+
+\section{Alterando um repositorio}
+
+O Git trabalha com status quando se modifica o conteudo do repositorio:
+
+\begin{itemize}
+    \item {\textbf{Untracked: }} Arquivos que não foram vinculados ao repositorio ainda.
+    \item {\textbf{Unmodified: }} Arquivos do repositorio que não sofreram alterações, seja uma modificação no conteudo ou sua exclusão.
+    \item {\textbf{Modified: }} Arquivos que foram modificados, mas suas alterações ainda não foram definidas e enviadas para o repositorio.
+    \item {\textbf{Staged: }} Arquivos que foram modificados e serão enviados para o repositorio.
+\end{itemize}
+
+Para verificar o status do arquivo, execute o comando \textit{git status}
+\subsubsection*{Diff}
+É possivel visualizar as alterações de arquivos marcados como ``Modified'' antes de eles passarem para ``Staged''. Basta executar \textit{git diff} que será possivel visualizar as alterações.O que esta de vermelho e a linha possuir um ``-'' significa que foi removido, e o que estiver de verde e a linha possuir um ``+'' significa que foi adicionado.
+
+Você ainda pode visualizar as modificações dos arquivos marcados como ``Staged'' com o ultimo commit adicionando o flag ``- -staged''.
+
+\subsection*{Commit}
+Commits são a maneira de gerencia que o Git utiliza. Um commit possui todas as alterações que serão enviadas para o repositorio.
+Todos os arquivos com status ``Modified'' serão enviados pelo mudados para ``Staged''.
+
+ Para se adicionar arquivos no commit, utiliza-se o comando \textit{git add [file]}.
+
+ Para se realizar um commit basta usar o comando \textit{git commit}. Você ainda pode incluir uma mensagem com uma informação junto com a flag \textit{-m} e a mensagem a frente.
+
+ 
+ \textbf{git add *.c}
+
+
+ \textbf{git commit -m ``Adicionando todos os sources codes''}
+
+ Lembre-se que o commit ainda não foi enviado para o repositorio, ou seja, eles são armazenados localmente.
+
+ Para mais informações, consulte o manual utilizando o comando \textit{man git-commit}
+ \subsubsection*{.gitignore}
+ É possivel ignorar arquivos ou ate pastas inteiras quando montar seu commit. Para isso, basta criar um arquivo chamado \textit{.gitignore} e colocar o nome dos arquivos ignorados dentro.
+
+ O repositorio \url{https://github.com/github/gitignore} possui alguns .gitignore prontos de varias linguagens.
+
+ 
+\section{Enviando e recebendo arquivos}
+
+\subsection*{Push}
+Para enviar informações para o repositorio remoto, utilizaremos o comando \textit{git push}. Para isso, é preciso que exista algum commit pendente para ser enviado.
+
+É possivel passar alguns argumentos para o comando,como o link do repositorio remoto ou qual a branch será enviado o commit.
+Os argumentos mais usados são \textit{origin master}, onde ``origin'' e o repositorio padrão que foi configurado e ``master'' é a branch.
+
+Existe uma infinidade de argumentos e flags para o comando \textit{push}, você pode verificar utilizando o comando \textit{man git-push} ou acessando \url{https://git-scm.com/docs/git-push}
+
+\subsection*{Pull}
+
+Para atualizar os arquivos do repositorio local basta utilizar o comando \textit{git pull}. 
+Isso irá mesclar os arquivos da branch atual do repositorio remoto para o repositorio local.Esse comando é uma mescla dos comandos 
+\textit{git fetch} e \textit{git merge FETCH\_HEAD}.
+
+\subsection*{Merge}
+
+Merge é um comando para juntar o historico entre branchs.
+
+
+
+
+
+
+
+
+
+
+
+\printbibliography 
+\end{document}

@@ -21,12 +21,12 @@ Seu objetivo inicial era o versionamento e a geração de um histórico de alter
 Rapidamente o Git foi sendo adotado por outros projeto, sendo eles de desenvolvimento de software ou com propostas gerais.
 
 
-Git e distribuído sob a licença GNU General Public License . Atualmente sua manutenção e supervisionada por Junio Hamano.
+Git e distribuído sob a licença GNU General Public License. Atualmente sua manutenção e supervisionada por Junio Hamano.
 
 \section{Como instalar o Git(Linux)}
 
 
-O Git pode vir por padrão em varias distribuições.Para ver se sua distro ja possui ele, basta apenas rodar o comando ``git - -version''.
+O Git pode vir por padrão em varias distribuições. Para ver se sua distro já possui ele, basta apenas rodar o comando ``git - -version''.
 
 
 Para instalar, verifique qual gerenciador de pacotes sua distribuição utiliza.
@@ -53,7 +53,7 @@ As suas customizações se manterão mesmo depois do programa ser atualizado.
 Alem disso, as configurações poderão ser alteradas a qualquer momento, bastando apenas rodar os comandos novamente. 
 
 
-O Git vem com uma ferramenta ja pronta para configuração, bastando apenas rodar o comando \textit{git config} e atribuir valores as variáveis.
+O Git vem com uma ferramenta já pronta para configuração, bastando apenas rodar o comando \textit{git config} e atribuir valores as variáveis.
 
 
 Estas variáveis ficam armazenadas em três lugares distintos:
@@ -70,7 +70,7 @@ Você pode ver suas configurações com o comando \textit{git config - -list}.
 
 \subsection*{Sua identidade}
 A primeira coisa a ser feita  após o Git ser instalado e a configuração de identidade.
- Ela é importante ja que todo commit e carimbado com essas informações, que sao imutáveis.
+ Ela é importante já que todo commit é carimbado com essas informações, que são imutáveis.
 
 \textbf{\$ git config --global user.name ``Nome'' }
 
@@ -128,7 +128,7 @@ Você ainda pode visualizar as modificações dos arquivos marcados como ``Stage
 
 \subsection*{Commit}
 Commits são a maneira de gerencia que o Git utiliza. Um commit possui todas as alterações que serão enviadas para o repositório.
-Todos os arquivos com status ``Modified'' serão enviados pelo mudados para ``Staged''.
+Todos os arquivos com status ``Modified'' serão mudados para ``Staged''.
 
  Para se adicionar arquivos no commit, utiliza-se o comando \textit{git add [file]}.
 
@@ -184,7 +184,7 @@ Caso tenha feito alguma alteração indevida, e precisa sobrescrever as alteraç
 
 \section{Branch}
 
-Branch,assim como o nome sugere,e uma ramificação no desenvolvimento do software.
+Branch,assim como o nome sugere, é uma ramificação no desenvolvimento do software.
 Muitas vezes precisamos acrescentar um recurso novo mas não queremos prejudicar o projeto principal com bugs, 
 ou precisamos dividir o desenvolvimento do projeto para vários contribuidores.
 
@@ -210,7 +210,7 @@ Enquanto o merge mescla os arquivos de duas branchs, o rebase ``refaz'' a base d
 Isso irá produzir um histórico linear, mais limpo e fácil de ser lido. 
 
 Como o rebase mexe nas estruturas das branchs envolvidas, reescrevendo o histórico de commits, pode levar a perda de trabalho e histórico se não for bem executada.
-Além disso,como não se gera um commit de merge,apenas junta as branchs,fica mais difícil de rastrear quando foi feito o rebase.
+Além disso, como não se gera um commit de merge,apenas junta as branchs, fica mais difícil de rastrear quando foi feito o rebase.
 
 Para usar o rebase bastar usar o comando \textit{git rebase [branch]} enquanto está na branch que deseja juntar a que foi passada por parametro.
 
@@ -218,12 +218,12 @@ Para usar o rebase bastar usar o comando \textit{git rebase [branch]} enquanto e
 \section{Repositórios remotos}
 
 Repositórios remotos são servidores que possuem o seu repositório para a sincronização e trabalho em equipe.
- Dezenas de sites oferecem serviços de host de repositórios,como o Github e o Gitlab.
+ Dezenas de sites oferecem serviços de host de repositórios, como o Github e o Gitlab.
  
  Para adicionar um link do repositório remoto ao seu repositório atual basta usar o comando \textit{git remote add origin [url]}.
  \subsection*{Github}
 Github é uma plataforma de hospedagem de código-fonte utilizando o Git.
-Amplamente usada para divulgação de trabalhos,o site permite a criação de times e contribuições a repositórios Open Sources.
+Amplamente usada para divulgação de trabalhos, o site permite a criação de times e contribuições a repositórios Open Sources.
 
 Foi desenvolvida por Chris Wanstrath, J. Hyett, Tom Preston-Werner e Scott Chacon usando o framework Rails da linguagem Ruby e seu lançamento foi no ano de 2008.
 Em 2018 a plataforma foi adquirida pela Microsoft por U\$ 7,5 bilhões.
@@ -231,16 +231,16 @@ Em 2018 a plataforma foi adquirida pela Microsoft por U\$ 7,5 bilhões.
 A criação de um repositório no site é bem intuitiva.
 
 Depois de criado a conta e logado,na tela \textit{dashboard} inicial, vá ao canto direito superior e clique na sua foto de perfil.
-Em seguida,no menu \textit{dropdowm}, clique em \textit{``Your Repositories''}.
-Depois,clique em \textit{``New''} no canto direito.
+Em seguida, no menu \textit{dropdowm}, clique em \textit{``Your Repositories''}.
+Depois, clique em \textit{``New''} no canto direito.
 
-Na tela de criação,será necessário colocar o nome do repositório para a exibição no site e se o repositório sera publico ou privado.
-Você ainda pode colocar uma breve descrição,adicionar automaticamente um \textit{.gitignore} e uma licença,assim como gerar automaticamente um arquivo \textit{Markdowm} Readme.md .
+Na tela de criação, será necessário colocar o nome do repositório para a exibição no site e se o repositório será publico ou privado.
+Você ainda pode colocar uma breve descrição, adicionar automaticamente um \textit{.gitignore} e uma licença, assim como gerar automaticamente um arquivo \textit{Markdowm} Readme.md .
 
 \subsubsection*{Fork}
 
 Um fork de um repositório é uma copia , no estado atual, para uma modificação de outros usuários.
-Vários projetos são bifurcados de outros,como o Unity DE que é um fork do Gnome, ou LineageOS que é um fork do Cyanogenmod.
+Vários projetos são bifurcados de outros, como o Unity DE que é um fork do Gnome ou LineageOS que é um fork do Cyanogenmod.
 
 Para criar um fork de um software para o uso próprio basta entrar no repositório e clicar em \textit{``Fork''} no canto superior.
 Lembre-se de ler a licença quanto a modificação e distribuição do mesmo.
@@ -251,9 +251,9 @@ O arquivo README.md é um arquivo escrito em \textit{Markdown} utilizado para se
 
 Markdowm é uma linguagem de marcação que converte seu texto para html valido. 
 Para mais informações acesse o link \url{https://www.markdownguide.org/}.
-\section{Conclusão}
+\section{Considerações Finais}
 A ferramenta Git é muito poderosa e é de extrema importância seu aprendizado.
-Nesse artigo foi abordado apenas o básico,mas você ja consegue gerenciar um repositório por conta própria.
+Nesse artigo foi abordado apenas o básico, mas você já consegue gerenciar um repositório por conta própria.
 
 Para mais informações, consulte  a \textit{man page} de cada comando usando o comando \textit{man [command]}, 
 ou  verifique a documentação oficial no site \url{https://git-scm.com/docs/}

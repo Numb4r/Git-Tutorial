@@ -14,14 +14,14 @@
 \section{O que é Git?}
 
 
-Git é um sistema de controle de versões distribuido desenvolvido por Linus Torvalds.
+Git é um sistema de controle de versões distribuído desenvolvido por Linus Torvalds.
 
 
-Seu objetivo inicial era o versionamento e a geração de um historico de alterações do desenvolvimento do kernel Linux.
+Seu objetivo inicial era o versionamento e a geração de um histórico de alterações do desenvolvimento do kernel Linux.
 Rapidamente o Git foi sendo adotado por outros projeto, sendo eles de desenvolvimento de software ou com propostas gerais.
 
 
-Git e distribuido sob a licensa GNU General Public License \textcite{GNULicense}. Atualmente sua manutenção e supervisionada por Junio Hamano.
+Git e distribuído sob a licença GNU General Public License . Atualmente sua manutenção e supervisionada por Junio Hamano.
 
 \section{Como instalar o Git(Linux)}
 
@@ -53,40 +53,40 @@ As suas customizações se manterão mesmo depois do programa ser atualizado.
 Alem disso, as configurações poderão ser alteradas a qualquer momento, bastando apenas rodar os comandos novamente. 
 
 
-O Git vem com uma ferramenta ja pronta para configuração, bastando apeanas rodar o comando \textit{git config} e atribuir valores as variaveis.
+O Git vem com uma ferramenta ja pronta para configuração, bastando apenas rodar o comando \textit{git config} e atribuir valores as variáveis.
 
 
 Estas variaveis ficam armazenadas em três lugares distintos:
 
 
 \begin{itemize}
-    \item {\textbf{/etc/gitconfig:} } Valido para todos os usuarios do sistema.Para isso, utilize a flag --system do comando git config.
+    \item {\textbf{/etc/gitconfig:} } Valido para todos os usuários do sistema.Para isso, utilize a flag --system do comando git config.
     
-    \item {\textbf{\textasciitilde/.gitconfig ou \textasciitilde/.config/git/config:} } Valido apenas para o usuario atual. Para isso, utilize a flag --global do comando git config.
+    \item {\textbf{\textasciitilde/.gitconfig ou \textasciitilde/.config/git/config:} } Valido apenas para o usuário atual. Para isso, utilize a flag --global do comando git config.
     
-    \item {\textbf{config(.git/config) de  cada repositorio:} } Especifico  do repositorio.
+    \item {\textbf{config(.git/config) de  cada repositorio:} } Especifico  do repositório.
 \end{itemize}
 Você pode ver suas configurações com o comando \textit{git config - -list}.
 
 \subsection*{Sua identidade}
 A primeira coisa a ser feita  após o Git ser instalado e a configuração de identidade.
- Ela é importante ja que todo commit e carimbado com essas informações, que sao imutaveis.
+ Ela é importante ja que todo commit e carimbado com essas informações, que sao imutáveis.
 
 \textbf{\$ git config --global user.name ``Nome'' }
 
 \textbf{\$ git config --global user.email Nome@domain.br}
 
-Note a flag \textit{- -global}, o que significa que essa configuração será valida para o usuario atualmente logado.
+Note a flag \textit{- -global}, o que significa que essa configuração será valida para o usuário atualmente logado.
 
-\section{Repositorios}
+\section{Repositórios}
 
-Repositorios são a maneira do Git  trabalhar. Você pode ter mais de um em sua maquina, mas cada projeto possui o seu exclusivo.
+Repositórios são a maneira do Git  trabalhar. Você pode ter mais de um em sua maquina, mas cada projeto possui o seu exclusivo.
 
-Exitem duas formas de adquirir um repositorio, criando ou clonando.
+Exitem duas formas de adquirir um repositório, criando ou clonando.
 
 Esse tutorial irá abranger comandos que irão ser executados em emuladores de terminal ou janelas de comando. 
-Existem programas, como o GitKraken, que é possivel criar e gerenciar repositorios por meio de interfaces graficas. 
-No entanto, é preciso um conhecimento previo e bem estabelecido dos comandos Git para sua total usabilidade.
+Existem programas, como o GitKraken, que é possível criar e gerenciar repositórios por meio de interfaces gráficas. 
+No entanto, é preciso um conhecimento prévio e bem estabelecido dos comandos Git para sua total usabilidade.
 
 \subsection*{Criando}
 
@@ -257,6 +257,9 @@ Para mais informações acesse o link \url{https://www.markdownguide.org/}.
 \section{Conclusão}
 A ferramenta Git é muito poderosa e é de extrema importancia seu aprendizado.
 Nesse artigo foi abordado apenas o basico,mas você ja consegue gerenciar um repositorio por conta propria.
+
+Para mais informações, consulte  a \textit{man page} de cada comando usando o comando \textit{man [command]}, 
+ou  verifique a documentação oficial no site \url{https://git-scm.com/docs/}
 
 
 

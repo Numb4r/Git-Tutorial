@@ -56,7 +56,7 @@ Alem disso, as configurações poderão ser alteradas a qualquer momento, bastan
 O Git vem com uma ferramenta ja pronta para configuração, bastando apenas rodar o comando \textit{git config} e atribuir valores as variáveis.
 
 
-Estas variaveis ficam armazenadas em três lugares distintos:
+Estas variáveis ficam armazenadas em três lugares distintos:
 
 
 \begin{itemize}
@@ -64,7 +64,7 @@ Estas variaveis ficam armazenadas em três lugares distintos:
     
     \item {\textbf{\textasciitilde/.gitconfig ou \textasciitilde/.config/git/config:} } Valido apenas para o usuário atual. Para isso, utilize a flag --global do comando git config.
     
-    \item {\textbf{config(.git/config) de  cada repositorio:} } Especifico  do repositório.
+    \item {\textbf{config(.git/config) de  cada repositório:} } Especifico  do repositório.
 \end{itemize}
 Você pode ver suas configurações com o comando \textit{git config - -list}.
 
@@ -90,44 +90,44 @@ No entanto, é preciso um conhecimento prévio e bem estabelecido dos comandos G
 
 \subsection*{Criando}
 
-Para criar um repositorio, primeiro precisa navegar até a pasta onde está seu projeto. 
-O comando \textit{cd} é usado para mudar o diretorio atual da sua janela de comandos.
+Para criar um repositório, primeiro precisa navegar até a pasta onde está seu projeto. 
+O comando \textit{cd} é usado para mudar o diretório atual da sua janela de comandos.
 
 cd /users/user/Projects/Tutorial
 
-Assim que estiver na pasta do seu projeto, um repositorio Git pode ser criado pelo comando \textit{git init}.
- Esse comando irá criar um subdiretorio \textbf{ .git } dentro da pasta do seu projeto.
+Assim que estiver na pasta do seu projeto, um repositório Git pode ser criado pelo comando \textit{git init}.
+ Esse comando irá criar um subdiretório \textbf{ .git } dentro da pasta do seu projeto.
 
 \subsection*{Clonando}
 
-Para clonar um repositorio existente, navegue ate a pasta que deseja salva-lo e execute \textit{git clone [url]}.
+Para clonar um repositório existente, navegue ate a pasta que deseja salva-lo e execute \textit{git clone [url]}.
 
-Por exemplo, se quiser clonar o repositorio do youtube-dl no Github,basta apenas executar o comando: 
+Por exemplo, se quiser clonar o repositório do youtube-dl no Github,basta apenas executar o comando: 
 
 \textbf{git clone https://github.com/ytdl-org/youtube-dl/}
 
-\section{Alterando um repositorio}
+\section{Alterando um repositório}
 
-O Git trabalha com status quando se modifica o conteudo do repositorio:
+O Git trabalha com status quando se modifica o conteúdo do repositório:
 
 \begin{itemize}
-    \item {\textbf{Untracked: }} Arquivos que não foram vinculados ao repositorio ainda.
-    \item {\textbf{Unmodified: }} Arquivos do repositorio que não sofreram alterações, seja uma modificação no conteudo ou sua exclusão.
-    \item {\textbf{Modified: }} Arquivos que foram modificados, mas suas alterações ainda não foram definidas e enviadas para o repositorio.
-    \item {\textbf{Staged: }} Arquivos que foram modificados e serão enviados para o repositorio.
+    \item {\textbf{Untracked: }} Arquivos que não foram vinculados ao repositório ainda.
+    \item {\textbf{Unmodified: }} Arquivos do repositório que não sofreram alterações, seja uma modificação no conteúdo ou sua exclusão.
+    \item {\textbf{Modified: }} Arquivos que foram modificados, mas suas alterações ainda não foram definidas e enviadas para o repositório.
+    \item {\textbf{Staged: }} Arquivos que foram modificados e serão enviados para o repositório.
 \end{itemize}
 
 Para verificar o status do arquivo, execute o comando \textit{git status}
 \subsubsection*{Diff}
-É possivel visualizar as alterações de arquivos marcados como ``Modified'' antes de eles passarem para ``Staged''. 
-Basta executar \textit{git diff} que será possivel visualizar as alterações.
+É possível visualizar as alterações de arquivos marcados como ``Modified'' antes de eles passarem para ``Staged''. 
+Basta executar \textit{git diff} que será possível visualizar as alterações.
 O que esta de vermelho e a linha possuir um ``-'' significa que foi removido, e o que estiver de verde e a linha possuir um ``+'' significa que foi adicionado.
 
 
 Você ainda pode visualizar as modificações dos arquivos marcados como ``Staged'' com o ultimo commit adicionando o flag ``- -staged''.
 
 \subsection*{Commit}
-Commits são a maneira de gerencia que o Git utiliza. Um commit possui todas as alterações que serão enviadas para o repositorio.
+Commits são a maneira de gerencia que o Git utiliza. Um commit possui todas as alterações que serão enviadas para o repositório.
 Todos os arquivos com status ``Modified'' serão enviados pelo mudados para ``Staged''.
 
  Para se adicionar arquivos no commit, utiliza-se o comando \textit{git add [file]}.
@@ -141,32 +141,32 @@ Todos os arquivos com status ``Modified'' serão enviados pelo mudados para ``St
 
  \textbf{git commit -m ``Adicionando todos os sources codes''}
 
- Lembre-se que o commit ainda não foi enviado para o repositorio, ou seja, eles são armazenados localmente.
+ Lembre-se que o commit ainda não foi enviado para o repositório, ou seja, eles são armazenados localmente.
 
  Para mais informações, consulte o manual utilizando o comando \textit{man git-commit}
  \subsubsection*{.gitignore}
- É possivel ignorar arquivos ou ate pastas inteiras quando montar seu commit.
+ É possível ignorar arquivos ou ate pastas inteiras quando montar seu commit.
  Para isso, basta criar um arquivo chamado \textit{.gitignore} e colocar o nome dos arquivos ignorados dentro.
 
- O repositorio \url{https://github.com/github/gitignore} possui alguns .gitignore prontos de varias linguagens.
+ O repositório \url{https://github.com/github/gitignore} possui alguns .gitignore prontos de varias linguagens.
 
  
 \section{Enviando e recebendo arquivos}
 
 \subsection*{Push}
-Para enviar informações para o repositorio remoto, utilizaremos o comando \textit{git push}. 
+Para enviar informações para o repositório remoto, utilizaremos o comando \textit{git push}. 
 Para isso, é preciso que exista algum commit pendente para ser enviado.
 
-É possivel passar alguns argumentos para o comando,como o link do repositorio remoto ou qual a branch será enviado o commit.
-Os argumentos mais usados são \textit{origin master}, onde ``origin'' e o repositorio padrão que foi configurado e ``master'' é a branch.
+É possível passar alguns argumentos para o comando,como o link do repositório remoto ou qual a branch será enviado o commit.
+Os argumentos mais usados são \textit{origin master}, onde ``origin'' e o repositório padrão que foi configurado e ``master'' é a branch.
 
 Existe uma infinidade de argumentos e flags para o comando \textit{push}, 
 você pode verificar utilizando o comando \textit{man git-push} ou acessando \url{https://git-scm.com/docs/git-push}
 
 \subsection*{Pull}
 
-Para atualizar os arquivos do repositorio local basta utilizar o comando \textit{git pull}. 
-Isso irá mesclar os arquivos da branch atual do repositorio remoto para o repositorio local.Esse comando é uma mescla dos comandos 
+Para atualizar os arquivos do repositório local basta utilizar o comando \textit{git pull}. 
+Isso irá mesclar os arquivos da branch atual do repositório remoto para o repositório local.Esse comando é uma mescla dos comandos 
 \textit{git fetch} e \textit{git merge FETCH\_HEAD}.
 
 \subsection*{Checkout}
@@ -175,21 +175,18 @@ Caso tenha feito alguma alteração indevida, e precisa sobrescrever as alteraç
  basta usar o comando \textit{git checkout [file]} que ele retornará o arquivo para o estado mais recente no HEAD.
  \subsection*{Tags}
 
- É possivel colocar uma etiqueta em um commit para melhor gerenciamento do seu repositorio.
+ É possível colocar uma etiqueta em um commit para melhor gerenciamento do seu repositório.
  Por exemplo,você pode colocar a etiqueta ``1.0.0'' em um commit para simbolizar o lançamento de uma versão.
 
  Par adicionar uma tag a um commit basta usar o comando \textit{git tag [message] [id commit]},
-  onde o id de commit são os 10 primeiros numeros que você quer referenciar com seu rotulo.
+  onde o id de commit são os 10 primeiros números que você quer referenciar com seu rotulo.
   Para conseguir o id do commit utilize o comando \textit{git log}
-
-
-
 
 \section{Branch}
 
 Branch,assim como o nome sugere,e uma ramificação no desenvolvimento do software.
 Muitas vezes precisamos acrescentar um recurso novo mas não queremos prejudicar o projeto principal com bugs, 
-ou precisamos dividir o desenvolvimento do projeto para varios contribuidores.
+ou precisamos dividir o desenvolvimento do projeto para vários contribuidores.
 
 
 Branchs podem ser criadas com o comando \textit{git checkout -b [branch name]}.
@@ -200,80 +197,65 @@ Para deletar a branch basta usar a flag ``-d'' junto do nome: \textit{git checko
 
 Quando se trabalha com varias branchs, chega uma hora que é preciso juntar todas em uma só.
  Para isso, basta utilizar o comando \textit{git merge [branch]}.
- Esse comando irá ``mesclar'' o conteudo da branch atual com a especificada no comando.
+ Esse comando irá ``mesclar'' o conteúdo da branch atual com a especificada no comando.
 
 \subsection*{Resolvendo conflitos}
-Quando se mescla duas branchs é possivel que ocorra conflitos entre os arquivos.
+Quando se mescla duas branchs é possível que ocorra conflitos entre os arquivos.
 Para resolver esses conflitos basta editar os arquivos e adiciona-los ao proximo commit.
 
-O git é irá marcar onde ocorre o conflito,com o conteudo da branch mesclada com o proprio nome e o conteudo da atual com o HEAD.
+O git é irá marcar onde ocorre o conflito,com o conteúdo da branch mesclada com o próprio nome e o conteúdo da atual com o HEAD.
 
 \subsection*{Rebase}
 Enquanto o merge mescla os arquivos de duas branchs, o rebase ``refaz'' a base delas,unificando-as.
-Isso irá produzir um historico linear, mais limpo e facil de ser lido. 
+Isso irá produzir um histórico linear, mais limpo e fácil de ser lido. 
 
-Como o rebase mexe nas estruturas das branchs envolvidas, reescrevendo o historico de commits, pode levar a perda de trabalho e historico se não for bem executada.
-Além disso,como não se gera um commit de merge,apenas junta as branchs,fica mais dificil de rastrear quando foi feito o rebase.
+Como o rebase mexe nas estruturas das branchs envolvidas, reescrevendo o histórico de commits, pode levar a perda de trabalho e histórico se não for bem executada.
+Além disso,como não se gera um commit de merge,apenas junta as branchs,fica mais difícil de rastrear quando foi feito o rebase.
 
 Para usar o rebase bastar usar o comando \textit{git rebase}
 
 
-\section{Repositorios remotos}
+\section{Repositórios remotos}
 
-Repositorios remotos são servidores que possuem o seu repositorio para a sincronização e trabalho em equipe.
- Dezenas de sites oferecem serviços de host de repositorios,como o Github e o Gitlab.
+Repositórios remotos são servidores que possuem o seu repositório para a sincronização e trabalho em equipe.
+ Dezenas de sites oferecem serviços de host de repositórios,como o Github e o Gitlab.
  
- Para adicionar um link do repositorio remoto ao seu repositorio atual basta usar o comando \textit{git remote add origin [url]}.
+ Para adicionar um link do repositório remoto ao seu repositório atual basta usar o comando \textit{git remote add origin [url]}.
  \subsection*{Github}
-Github é uma plataforma de hospedagem de codigo-fonte utilizando o Git.
-Amplamente usada para divulgação de trabalhos,o site permite a criação de times e contribuições a repositorios Open Sources.
+Github é uma plataforma de hospedagem de código-fonte utilizando o Git.
+Amplamente usada para divulgação de trabalhos,o site permite a criação de times e contribuições a repositórios Open Sources.
 
 Foi desenvolvida por Chris Wanstrath, J. Hyett, Tom Preston-Werner e Scott Chacon usando o framework Rails da linguagem Ruby e seu lançamento foi no ano de 2008.
 Em 2018 a plataforma foi adquirida pela Microsoft por U\$ 7,5 bilhões.
-\subsubsection*{Criando um repositorio}
-A criação de um repositorio no site é bem intuitiva.
+\subsubsection*{Criando um repositório}
+A criação de um repositório no site é bem intuitiva.
 
 Depois de criado a conta e logado,na tela \textit{dashboard} inicial, vá ao canto direito superior e clique na sua foto de perfil.
 Em seguida,no menu \textit{dropdowm}, clique em \textit{``Your Repositories''}.
 Depois,clique em \textit{``New''} no canto direito.
 
-Na tela de criação,será necessario colocar o nome do repositorio para a exibição no site e se o repositorio sera publico ou privado.
-Você ainda pode colocar uma breve descrição,adicionar automaticamente um \textit{.gitignore} e uma licensa,assim como gerar automaticamente um arquivo \textit{Markdowm} Readme.md .
+Na tela de criação,será necessário colocar o nome do repositório para a exibição no site e se o repositório sera publico ou privado.
+Você ainda pode colocar uma breve descrição,adicionar automaticamente um \textit{.gitignore} e uma licença,assim como gerar automaticamente um arquivo \textit{Markdowm} Readme.md .
 
 \subsubsection*{Fork}
 
-Um fork de um repositorio é uma copia , no estado atual, para uma modificação de outros usuarios.
-Varios projetos são bifurcados de outros,como o Unity DE que é um fork do Gnome, ou LineageOS que é um fork do Cyanogenmod.
+Um fork de um repositório é uma copia , no estado atual, para uma modificação de outros usuários.
+Vários projetos são bifurcados de outros,como o Unity DE que é um fork do Gnome, ou LineageOS que é um fork do Cyanogenmod.
 
-Para criar um fork de um software para o uso proprio basta entrar no repositorio e clicar em \textit{``Fork''} no canto superior.
-Lembre-se de ler a licensa quanto a modificação e distribuição do mesmo.
+Para criar um fork de um software para o uso próprio basta entrar no repositório e clicar em \textit{``Fork''} no canto superior.
+Lembre-se de ler a licença quanto a modificação e distribuição do mesmo.
 
 \subsubsection*{README.md}
 
-O arquivo README.md é um arquivo escrito em \textit{Markdown} utilizado para se informar sobre o repositorio.
+O arquivo README.md é um arquivo escrito em \textit{Markdown} utilizado para se informar sobre o repositório.
 
 Markdowm é uma linguagem de marcação que converte seu texto para html valido. 
 Para mais informações acesse o link \url{https://www.markdownguide.org/}.
 \section{Conclusão}
-A ferramenta Git é muito poderosa e é de extrema importancia seu aprendizado.
-Nesse artigo foi abordado apenas o basico,mas você ja consegue gerenciar um repositorio por conta propria.
+A ferramenta Git é muito poderosa e é de extrema importância seu aprendizado.
+Nesse artigo foi abordado apenas o básico,mas você ja consegue gerenciar um repositório por conta própria.
 
 Para mais informações, consulte  a \textit{man page} de cada comando usando o comando \textit{man [command]}, 
 ou  verifique a documentação oficial no site \url{https://git-scm.com/docs/}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\printbibliography 
 \end{document}
